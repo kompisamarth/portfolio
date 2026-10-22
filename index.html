@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kompi Samarth — Systems, intelligence, and engineering built with intent. C, Python, Linux, Edge ML, Data, Design.">
+  <meta name="theme-color" content="#11100E">
+  <meta name="color-scheme" content="dark">
+  <title>Kompi Samarth · Systems, Intelligence &amp; Engineering</title>
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Fonts: Playfair Display (dramatic serif), Inter (body), JetBrains Mono (technical) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Favicon (inline SVG data URI — sand-colored K) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23D5B98D'>K</text></svg>">
+</head>
+<body>
+
+  <!-- Skip link for accessibility (must be first focusable element) -->
+  <a href="#about" class="sr-only sr-only--focusable">Skip to main content</a>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__bar" id="scrollProgressBar"></div>
+  </div>
+
+  <!-- Floating Dock (Inspired by omeshsengar.com) -->
+  <header class="floating-dock" role="banner" aria-label="Quick navigation">
+    <a href="#hero" class="dock__brand" aria-label="Kompi Samarth Home">
+      <div class="dock__monogram" aria-hidden="true">KS</div>
+      <span class="dock__name">Kompi Samarth</span>
+      <span class="dock__affiliation">RVCE&nbsp;'25</span>
+    </a>
+
+    <div class="dock__divider" aria-hidden="true"></div>
+
+    <nav class="dock__nav" aria-label="Primary navigation">
+      <a href="#projects" class="dock__link">Archive</a>
+      <a href="#about" class="dock__link">About</a>
+      <a href="#contact" class="dock__link">Transmit</a>
+    </nav>
+
+    <div class="dock__divider" aria-hidden="true"></div>
+
+    <div class="dock__status" title="Active student developer &amp; researcher">
+      <span class="dock__beacon" aria-hidden="true"></span>
+      <span>AVAILABLE</span>
+    </div>
+
+    <div class="dock__clock" id="dockClock" title="Local Time in Bengaluru (IST)">
+      BLR 15:00:00 IST
+    </div>
+
+    <a href="mailto:kompisamarth.cs25@rvce.edu.in?subject=Resume%20Request%20-%20Kompi%20Samarth" class="dock__resume" aria-label="Request Resume" title="Request full engineering resume">
+      <span>RESUME ↗</span>
+    </a>
+
+    <button class="dock__sfx active" id="sfxToggle" type="button" aria-label="Toggle atmospheric sound and effects" title="Audio: Always active (Click to mute/unmute)">
+      <span class="dock__sfx-bars" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+      <span id="sfxLabel">SOUND: ON</span>
+    </button>
+  </header>
+
+  <!-- Custom Cursor elements inserted by script.js -->
+
+  <!-- ═══════════════════════════════════════════════════
+       1. HERO — "Signal in the Sand"
+       ═══════════════════════════════════════════════════ -->
+  <section id="hero" class="section hero" aria-label="Introduction">
+    <!-- Particle canvas -->
+    <canvas class="hero__particles" id="heroParticles" aria-hidden="true"></canvas>
+
+    <!-- Layered desert background -->
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__dune hero__dune--far" data-parallax="0.08"></div>
+      <div class="hero__dune hero__dune--mid" data-parallax="0.15"></div>
+      <div class="hero__dune hero__dune--near" data-parallax="0.25"></div>
+      <div class="hero__horizon"></div>
+    </div>
+
+    <!-- Topographic decorative contours -->
+    <div class="hero__topo" aria-hidden="true">
+      <svg viewBox="0 0 1440 400" preserveAspectRatio="none" class="topo-svg">
+        <path d="M0,300 C360,260 720,340 1080,280 S1440,320 1440,300" fill="none" stroke="rgba(213,185,141,0.06)" stroke-width="1"/>
+        <path d="M0,320 C360,280 720,360 1080,300 S1440,340 1440,320" fill="none" stroke="rgba(213,185,141,0.04)" stroke-width="0.5"/>
+        <path d="M0,280 C360,240 720,320 1080,260 S1440,300 1440,280" fill="none" stroke="rgba(213,185,141,0.03)" stroke-width="0.5"/>
+      </svg>
+    </div>
+
+    <div class="hero__content reveal">
+      <div class="hero__label">
+        <span class="label label--mono" aria-hidden="true">PORTFOLIO ARCHIVE · 2026</span>
+      </div>
+
+      <h1 class="hero__name">
+        <span class="hero__name-line" data-delay="0">KOMPI</span>
+        <span class="hero__name-line" data-delay="1">SAMARTH</span>
+      </h1>
+
+      <p class="hero__subtitle reveal" data-delay="2">
+        Systems, intelligence, and engineering—built with intent.
+      </p>
+
+      <div class="hero__stack reveal" data-delay="3">
+        <span class="tag tag--tech">C</span>
+        <span class="tag tag--separator" aria-hidden="true">·</span>
+        <span class="tag tag--tech">Python</span>
+        <span class="tag tag--separator" aria-hidden="true">·</span>
+        <span class="tag tag--tech">Linux</span>
+        <span class="tag tag--separator" aria-hidden="true">·</span>
+        <span class="tag tag--tech">Edge ML</span>
+        <span class="tag tag--separator" aria-hidden="true">·</span>
+        <span class="tag tag--tech">Data</span>
+        <span class="tag tag--separator" aria-hidden="true">·</span>
+        <span class="tag tag--tech">Design</span>
+      </div>
+    </div>
+
+    <div class="hero__scroll-prompt reveal" data-delay="4" aria-hidden="true">
+      <span class="scroll-prompt__text">SCROLL TO EXPLORE</span>
+      <div class="scroll-prompt__line"></div>
+    </div>
+  </section>
+
+  <!-- Marquee Technical Ticker Strip (Inspired by omeshsengar.com) -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-group">
+        <span class="marquee-item">SYSTEMS ENGINEERING <span class="marquee-glyph">✦</span></span>
+        <span class="marquee-item">POSIX ZERO-COPY IPC <span class="marquee-glyph">✦</span></span>
+        <span class="marquee-item">ONNX RUNTIME C API <span class="marquee-glyph">✦</span></span>
+        <span class="marquee-item">EXPLAINABLE AI (SHAP) <span class="marquee-glyph">✦</span></span>
+        <span class="marquee-item">AERODYNAMIC S-DUCT CFD <span class="marquee-glyph">✦</span></span>
+        <span class="marquee-item">SMART NANO-COATINGS <span class="marquee-glyph">✦</span></span>
+        <span class="marquee-item">COMPUTER VISION <span class="marquee-glyph">✦</span></span>
+        <span class="marquee-item">EMBEDDED TELEMETRY <span class="marquee-glyph">✦</span></span>
+      </div>
+      <div class="marquee-group">
+        <span class="marquee-item">SYSTEMS ENGINEERING <span class="marquee-glyph">✦</span></span>
+        <span class="marquee-item">POSIX ZERO-COPY IPC <span class="marquee-glyph">✦</span></span>
+        <span class="marquee-item">ONNX RUNTIME C API <span class="marquee-glyph">✦</span></span>
+        <span class="marquee-item">EXPLAINABLE AI (SHAP) <span class="marquee-glyph">✦</span></span>
+        <span class="marquee-item">AERODYNAMIC S-DUCT CFD <span class="marquee-glyph">✦</span></span>
+        <span class="marquee-item">SMART NANO-COATINGS <span class="marquee-glyph">✦</span></span>
+        <span class="marquee-item">COMPUTER VISION <span class="marquee-glyph">✦</span></span>
+        <span class="marquee-item">EMBEDDED TELEMETRY <span class="marquee-glyph">✦</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════
+       2. ABOUT — "Building across systems, data, and design."
+       ═══════════════════════════════════════════════════ -->
+  <section id="about" class="section about" aria-label="About Kompi Samarth">
+    <div class="section__inner about__grid">
+
+      <!-- Left column: editorial statement -->
+      <div class="about__text">
+        <span class="label label--mono reveal">ABOUT</span>
+        <h2 class="about__heading reveal" data-delay="1">
+          Building across systems,<br>data, and design.
+        </h2>
+        <p class="about__copy reveal" data-delay="2">
+          Kompi Samarth is a Computer Science student exploring intelligent systems, machine learning, low-level software, engineering simulation, and human-centred design. The work spans from real-time Linux telemetry and edge AI to data-driven prediction, aerospace optimisation, and practical digital products.
+        </p>
+      </div>
+
+      <!-- Right column: skill tags -->
+      <div class="about__skills reveal" data-delay="3">
+        <span class="label label--mono">CAPABILITIES</span>
+        <div class="skill-grid" role="list">
+          <span class="skill-tag" role="listitem">C / C11</span>
+          <span class="skill-tag" role="listitem">Python</span>
+          <span class="skill-tag" role="listitem">Java</span>
+          <span class="skill-tag" role="listitem">Linux</span>
+          <span class="skill-tag" role="listitem">Machine Learning</span>
+          <span class="skill-tag" role="listitem">NLP</span>
+          <span class="skill-tag" role="listitem">Computer Vision</span>
+          <span class="skill-tag" role="listitem">CFD</span>
+          <span class="skill-tag" role="listitem">Human-Centred Design</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       3. PROJECTS — Scroll-Driven Showcase (01 - 08)
+       ═══════════════════════════════════════════════════ -->
+  <section id="projects" class="section projects" aria-label="Projects">
+
+    <!-- Fixed Project progress indicator -->
+    <div class="project-progress" aria-live="polite" aria-label="Project navigation">
+      <span class="project-progress__current" id="projectCurrent">01</span>
+      <span class="project-progress__divider" aria-hidden="true">/</span>
+      <span class="project-progress__total" id="projectTotal">08</span>
+    </div>
+
+    <!-- Quick-jump Project Scrubber Rail (Inspired by omeshsengar.com) -->
+    <nav class="project-scrubber" id="projectScrubber" aria-label="Direct project jump rail">
+      <div class="scrubber-hotkeys" aria-hidden="true" title="Keyboard Navigation: Press J to advance, K to go back">
+        <span class="kbd-badge">J</span><span class="kbd-badge">K</span>
+        <span class="kbd-label">NAV</span>
+      </div>
+      <a href="#project-1" class="scrubber-dot active" data-scrubber-index="1" aria-label="Jump to Project 1: Student Dropout Prediction">
+        <span>01</span>
+        <span class="scrubber-tooltip">01 · Student Dropout AI</span>
+      </a>
+      <a href="#project-2" class="scrubber-dot" data-scrubber-index="2" aria-label="Jump to Project 2: StayHub Property Management">
+        <span>02</span>
+        <span class="scrubber-tooltip">02 · StayHub Java</span>
+      </a>
+      <a href="#project-3" class="scrubber-dot" data-scrubber-index="3" aria-label="Jump to Project 3: C-Based Real-Time Sidecar">
+        <span>03</span>
+        <span class="scrubber-tooltip">03 · C Telemetry Sidecar</span>
+      </a>
+      <a href="#project-4" class="scrubber-dot" data-scrubber-index="4" aria-label="Jump to Project 4: Smart Coatings Research">
+        <span>04</span>
+        <span class="scrubber-tooltip">04 · Smart Nano Coatings</span>
+      </a>
+      <a href="#project-5" class="scrubber-dot" data-scrubber-index="5" aria-label="Jump to Project 5: S-Shape Air Intake CFD">
+        <span>05</span>
+        <span class="scrubber-tooltip">05 · S-Duct Jet CFD</span>
+      </a>
+      <a href="#project-6" class="scrubber-dot" data-scrubber-index="6" aria-label="Jump to Project 6: Hostel Mess Nutrition Survey">
+        <span>06</span>
+        <span class="scrubber-tooltip">06 · Mess Nutrition Survey</span>
+      </a>
+      <a href="#project-7" class="scrubber-dot" data-scrubber-index="7" aria-label="Jump to Project 7: AI News Aggregator">
+        <span>07</span>
+        <span class="scrubber-tooltip">07 · News Bias AI</span>
+      </a>
+      <a href="#project-8" class="scrubber-dot" data-scrubber-index="8" aria-label="Jump to Project 8: Driver Drowsiness Detection">
+        <span>08</span>
+        <span class="scrubber-tooltip">08 · Drowsiness CV</span>
+      </a>
+    </nav>
+
+    <!-- Project Section Header & Domain Filter Toolbar -->
+    <div class="projects-header-strip reveal" id="projectsHeader">
+      <div class="projects-header-top">
+        <div class="projects-header-title">
+          <span class="label label--mono label--spice">ENGINEERING ARCHIVE</span>
+          <h2 class="projects-main-heading">Selected Technical Works</h2>
+        </div>
+        <div class="projects-keyboard-hint" aria-hidden="true">
+          <span>KEYBOARD: <kbd>J</kbd> / <kbd>K</kbd> OR <kbd>↓</kbd> / <kbd>↑</kbd> TO CYCLE</span>
+        </div>
+      </div>
+      <div class="project-filters" role="toolbar" aria-label="Filter projects by discipline">
+        <button type="button" class="filter-pill active" data-filter="all">ALL (08)</button>
+        <button type="button" class="filter-pill" data-filter="systems">SYSTEMS &amp; LOW-LEVEL (02)</button>
+        <button type="button" class="filter-pill" data-filter="ai">APPLIED AI &amp; ML (02)</button>
+        <button type="button" class="filter-pill" data-filter="engineering">ENGINEERING &amp; SIM (02)</button>
+        <button type="button" class="filter-pill" data-filter="product">PRODUCT &amp; RESEARCH (02)</button>
+      </div>
+    </div>
+
+    <!-- ───────────────────────────────────────────
+         PROJECT 01: AI-Based Student Dropout Prediction
+         ─────────────────────────────────────────── -->
+    <article class="project-scene" id="project-1" data-project-index="1" data-domain="ai" aria-label="Project: AI-Based Student Dropout Prediction System">
+      <div class="project-scene__inner">
+
+        <!-- Meta column -->
+        <div class="project-scene__meta">
+          <div class="project-scene__number reveal" aria-hidden="true">
+            <span class="big-number">01</span>
+          </div>
+          <div class="project-scene__field-label reveal" data-delay="1">
+            <span class="label label--mono label--spice">FIELD SYSTEM 01</span>
+          </div>
+          <div class="project-scene__category reveal" data-delay="2">
+            <span class="label label--mono">Machine Learning / Education</span>
+          </div>
+        </div>
+
+        <!-- Content column -->
+        <div class="project-scene__content">
+          <h3 class="project-scene__title reveal" data-delay="1">
+            AI-Based Student Dropout<br>Prediction System
+          </h3>
+
+          <p class="project-scene__description reveal" data-delay="2">
+            An explainable machine-learning system predicting student dropout risk using Random Forest and SHAP feature attribution to uncover actionable retention signals.
+          </p>
+
+          <!-- Stack tags -->
+          <div class="project-scene__stack reveal" data-delay="3">
+            <span class="label label--mono label--muted">TECHNOLOGIES</span>
+            <div class="stack-tags">
+              <span class="skill-tag skill-tag--sm">Python</span>
+              <span class="skill-tag skill-tag--sm">Streamlit</span>
+              <span class="skill-tag skill-tag--sm">Scikit-learn</span>
+              <span class="skill-tag skill-tag--sm">Random Forest</span>
+              <span class="skill-tag skill-tag--sm">SHAP</span>
+            </div>
+          </div>
+
+          <!-- Visual Graphic: SHAP Explainability & Confidence Bands -->
+          <div class="project-graphic reveal" data-delay="4" role="img" aria-label="SHAP Feature Importance & Risk Confidence Graphic">
+            <div class="graphic-header">
+              <span>SHAP MODEL EXPLAINABILITY</span>
+              <span class="graphic-badge">RISK LEVEL: 78.4% HIGH</span>
+            </div>
+
+            <div class="shap-summary">
+              <div class="shap-risk-row">
+                <span>PREDICTION PROBABILITY [DROPOUT RISK]</span>
+                <span style="color: var(--spice-orange);">0.784</span>
+              </div>
+              <div class="risk-meter" aria-hidden="true">
+                <div class="risk-fill"></div>
+              </div>
+
+              <div class="shap-bars">
+                <div class="shap-bar-item">
+                  <span>Prior Semester GPA</span>
+                  <div class="shap-track"><div class="shap-val shap-val--pos" style="width: 82%;"></div></div>
+                  <span>+0.34 SHAP</span>
+                </div>
+                <div class="shap-bar-item">
+                  <span>LMS Engagement</span>
+                  <div class="shap-track"><div class="shap-val shap-val--pos" style="width: 68%;"></div></div>
+                  <span>+0.28 SHAP</span>
+                </div>
+                <div class="shap-bar-item">
+                  <span>Fee Installment Lag</span>
+                  <div class="shap-track"><div class="shap-val shap-val--pos" style="width: 46%;"></div></div>
+                  <span>+0.19 SHAP</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action buttons -->
+          <div class="project-scene__actions reveal" data-delay="5">
+            <button type="button" class="btn btn--secondary btn-inspect" data-project-id="1">
+              <span class="btn__text">Inspect Telemetry &amp; Specs</span>
+              <span class="btn__icon" aria-hidden="true">⚡</span>
+            </button>
+            <a href="https://github.com/kompisamarth" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+              <span class="btn__text">Source Archive</span>
+              <span class="btn__icon" aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ───────────────────────────────────────────
+         PROJECT 02: StayHub: Property Management System
+         ─────────────────────────────────────────── -->
+    <article class="project-scene" id="project-2" data-project-index="2" data-domain="systems" aria-label="Project: StayHub Property Management System">
+      <div class="project-scene__inner">
+
+        <!-- Meta column -->
+        <div class="project-scene__meta">
+          <div class="project-scene__number reveal" aria-hidden="true">
+            <span class="big-number">02</span>
+          </div>
+          <div class="project-scene__field-label reveal" data-delay="1">
+            <span class="label label--mono label--spice">FIELD SYSTEM 02</span>
+          </div>
+          <div class="project-scene__category reveal" data-delay="2">
+            <span class="label label--mono">Software Development / OOP</span>
+          </div>
+        </div>
+
+        <!-- Content column -->
+        <div class="project-scene__content">
+          <h3 class="project-scene__title reveal" data-delay="1">
+            StayHub: Property<br>Management System
+          </h3>
+
+          <p class="project-scene__description reveal" data-delay="2">
+            A modular desktop property management suite built in Java Swing, applying strict OOP patterns to coordinate leases, tenant tracking, and unit vacancy.
+          </p>
+
+          <!-- Stack tags -->
+          <div class="project-scene__stack reveal" data-delay="3">
+            <span class="label label--mono label--muted">TECHNOLOGIES</span>
+            <div class="stack-tags">
+              <span class="skill-tag skill-tag--sm">Java</span>
+              <span class="skill-tag skill-tag--sm">Swing</span>
+              <span class="skill-tag skill-tag--sm">OOP</span>
+            </div>
+          </div>
+
+          <!-- Visual Graphic: Blueprint & Unit Occupancy Matrix -->
+          <div class="project-graphic reveal" data-delay="4" role="img" aria-label="StayHub Property Blueprint & Matrix">
+            <div class="graphic-header">
+              <span>ESTATE MATRIX &amp; FLOOR PLAN</span>
+              <span class="graphic-badge graphic-badge--sand">OOP ARCHITECTURE</span>
+            </div>
+
+            <div class="stayhub-grid">
+              <div class="stayhub-unit occupied">
+                <span class="unit-id">UNIT A-101</span>
+                <span class="unit-status">● OCCUPIED · 12M LEASE</span>
+              </div>
+              <div class="stayhub-unit vacant">
+                <span class="unit-id">UNIT A-102</span>
+                <span class="unit-status">○ VACANT · READY</span>
+              </div>
+              <div class="stayhub-unit occupied">
+                <span class="unit-id">UNIT B-201</span>
+                <span class="unit-status">● OCCUPIED · 6M LEASE</span>
+              </div>
+              <div class="stayhub-unit occupied">
+                <span class="unit-id">UNIT B-202</span>
+                <span class="unit-status">● OCCUPIED · 12M LEASE</span>
+              </div>
+            </div>
+
+            <div class="stayhub-stats">
+              <span>OCCUPANCY: 92.4%</span>
+              <span>·</span>
+              <span>ACTIVE LEASES: 48</span>
+              <span>·</span>
+              <span>FLOW: EntityModel → Unit → LeaseSchedule</span>
+            </div>
+          </div>
+
+          <!-- Action buttons -->
+          <div class="project-scene__actions reveal" data-delay="5">
+            <button type="button" class="btn btn--secondary btn-inspect" data-project-id="2">
+              <span class="btn__text">Inspect Telemetry &amp; Specs</span>
+              <span class="btn__icon" aria-hidden="true">⚡</span>
+            </button>
+            <a href="https://github.com/kompisamarth" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+              <span class="btn__text">Source Archive</span>
+              <span class="btn__icon" aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ───────────────────────────────────────────
+         PROJECT 03: C-Based Real-Time AI System Monitoring Sidecar
+         ─────────────────────────────────────────── -->
+    <article class="project-scene" id="project-3" data-project-index="3" data-domain="systems" aria-label="Project: C-Based Real-Time AI System Monitoring Sidecar">
+      <div class="project-scene__inner">
+
+        <!-- Meta column -->
+        <div class="project-scene__meta">
+          <div class="project-scene__number reveal" aria-hidden="true">
+            <span class="big-number">03</span>
+          </div>
+          <div class="project-scene__field-label reveal" data-delay="1">
+            <span class="label label--mono label--spice">FIELD SYSTEM 03</span>
+          </div>
+          <div class="project-scene__category reveal" data-delay="2">
+            <span class="label label--mono">Systems Engineering / Edge ML</span>
+          </div>
+        </div>
+
+        <!-- Content column -->
+        <div class="project-scene__content">
+          <h3 class="project-scene__title reveal" data-delay="1">
+            C-Based Real-Time AI<br>System Monitoring Sidecar
+          </h3>
+
+          <p class="project-scene__description reveal" data-delay="2">
+            A high-performance Linux telemetry sidecar in pure C (C11), ingesting process metrics via zero-copy POSIX shared memory with sub-millisecond ONNX neural anomaly detection.
+          </p>
+
+          <!-- Stack tags -->
+          <div class="project-scene__stack reveal" data-delay="3">
+            <span class="label label--mono label--muted">TECHNOLOGIES</span>
+            <div class="stack-tags">
+              <span class="skill-tag skill-tag--sm">C (C11)</span>
+              <span class="skill-tag skill-tag--sm">POSIX IPC</span>
+              <span class="skill-tag skill-tag--sm">Shared Memory</span>
+              <span class="skill-tag skill-tag--sm">pthread</span>
+              <span class="skill-tag skill-tag--sm">ONNX Runtime C API</span>
+              <span class="skill-tag skill-tag--sm">Linux</span>
+            </div>
+          </div>
+
+          <!-- Key highlights -->
+          <div class="project-scene__highlights reveal" data-delay="4">
+            <span class="label label--mono label--muted">KEY TECHNICAL CUES</span>
+            <ul class="highlight-list">
+              <li class="highlight-item">
+                <span class="highlight-marker" aria-hidden="true">→</span>
+                Zero-copy POSIX shared memory ring buffer (`shm_open`, `mmap`)
+              </li>
+              <li class="highlight-item">
+                <span class="highlight-marker" aria-hidden="true">→</span>
+                Asynchronous low-overhead C daemon telemetry loop
+              </li>
+              <li class="highlight-item">
+                <span class="highlight-marker" aria-hidden="true">→</span>
+                Real-time neural anomaly scoring via native ONNX Runtime C API
+              </li>
+            </ul>
+          </div>
+
+          <!-- Visual Graphic: Architecture Flow -->
+          <div class="project-scene__architecture reveal" data-delay="5">
+            <span class="label label--mono label--muted">SYSTEM ARCHITECTURE</span>
+            <div class="architecture-flow" id="archFlow" role="img" aria-label="System architecture flow: Target Application to Telemetry Ring Buffer to POSIX Shared Memory to C Sidecar Daemon to Metric Serializer to ONNX Runtime to Anomaly Score">
+              <div class="arch-node arch-node--source" data-arch-index="0">
+                <span class="arch-node__icon" aria-hidden="true">⬡</span>
+                <span class="arch-node__label">Target<br>Application</span>
+              </div>
+              <div class="arch-arrow" data-arch-index="1" aria-hidden="true">
+                <span class="arch-arrow__line"></span>
+                <span class="arch-arrow__head">›</span>
+              </div>
+              <div class="arch-node" data-arch-index="2">
+                <span class="arch-node__icon" aria-hidden="true">◎</span>
+                <span class="arch-node__label">Telemetry<br>Ring Buffer</span>
+              </div>
+              <div class="arch-arrow" data-arch-index="3" aria-hidden="true">
+                <span class="arch-arrow__line"></span>
+                <span class="arch-arrow__head">›</span>
+              </div>
+              <div class="arch-node" data-arch-index="4">
+                <span class="arch-node__icon" aria-hidden="true">⧉</span>
+                <span class="arch-node__label">POSIX Shared<br>Memory</span>
+              </div>
+              <div class="arch-arrow" data-arch-index="5" aria-hidden="true">
+                <span class="arch-arrow__line"></span>
+                <span class="arch-arrow__head">›</span>
+              </div>
+              <div class="arch-node arch-node--core" data-arch-index="6">
+                <span class="arch-node__icon" aria-hidden="true">⬢</span>
+                <span class="arch-node__label">C Sidecar<br>Daemon</span>
+              </div>
+              <div class="arch-arrow" data-arch-index="7" aria-hidden="true">
+                <span class="arch-arrow__line"></span>
+                <span class="arch-arrow__head">›</span>
+              </div>
+              <div class="arch-node" data-arch-index="8">
+                <span class="arch-node__icon" aria-hidden="true">⟐</span>
+                <span class="arch-node__label">Metric<br>Serializer</span>
+              </div>
+              <div class="arch-arrow" data-arch-index="9" aria-hidden="true">
+                <span class="arch-arrow__line"></span>
+                <span class="arch-arrow__head">›</span>
+              </div>
+              <div class="arch-node" data-arch-index="10">
+                <span class="arch-node__icon" aria-hidden="true">◈</span>
+                <span class="arch-node__label">ONNX<br>Runtime</span>
+              </div>
+              <div class="arch-arrow" data-arch-index="11" aria-hidden="true">
+                <span class="arch-arrow__line"></span>
+                <span class="arch-arrow__head">›</span>
+              </div>
+              <div class="arch-node arch-node--output" data-arch-index="12">
+                <span class="arch-node__icon" aria-hidden="true">◉</span>
+                <span class="arch-node__label">Anomaly Score<br>/ Alert</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action buttons -->
+          <div class="project-scene__actions reveal" data-delay="6">
+            <button type="button" class="btn btn--secondary btn-inspect" data-project-id="3">
+              <span class="btn__text">Inspect Telemetry &amp; Specs</span>
+              <span class="btn__icon" aria-hidden="true">⚡</span>
+            </button>
+            <a href="https://github.com/kompisamarth" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+              <span class="btn__text">Source Archive</span>
+              <span class="btn__icon" aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ───────────────────────────────────────────
+         PROJECT 04: Nanotechnology-Based Smart Coatings
+         ─────────────────────────────────────────── -->
+    <article class="project-scene" id="project-4" data-project-index="4" data-domain="engineering" aria-label="Project: Nanotechnology-Based Smart Coatings for Corrosion Protection">
+      <div class="project-scene__inner">
+
+        <!-- Meta column -->
+        <div class="project-scene__meta">
+          <div class="project-scene__number reveal" aria-hidden="true">
+            <span class="big-number">04</span>
+          </div>
+          <div class="project-scene__field-label reveal" data-delay="1">
+            <span class="label label--mono label--spice">FIELD SYSTEM 04</span>
+          </div>
+          <div class="project-scene__category reveal" data-delay="2">
+            <span class="label label--mono">Materials Science / Engineering Research</span>
+          </div>
+        </div>
+
+        <!-- Content column -->
+        <div class="project-scene__content">
+          <h3 class="project-scene__title reveal" data-delay="1">
+            Nanotechnology-Based Smart Coatings<br>for Corrosion Protection
+          </h3>
+
+          <p class="project-scene__description reveal" data-delay="2">
+            Engineering exploration of multi-tier nanostructured barrier coatings, integrating self-healing microcapsules and electrochemical impedance analysis for corrosion defense.
+          </p>
+
+          <!-- Stack tags -->
+          <div class="project-scene__stack reveal" data-delay="3">
+            <span class="label label--mono label--muted">TECHNOLOGIES</span>
+            <div class="stack-tags">
+              <span class="skill-tag skill-tag--sm">Nanotechnology</span>
+              <span class="skill-tag skill-tag--sm">Materials Science</span>
+              <span class="skill-tag skill-tag--sm">ANSYS / CFD</span>
+            </div>
+          </div>
+
+          <!-- Visual Graphic: Microscopic Strata Cross-section -->
+          <div class="project-graphic reveal" data-delay="4" role="img" aria-label="Nanotechnology Smart Coating Barrier Layers">
+            <div class="graphic-header">
+              <span>LAMINAR COATING STRATIFICATION</span>
+              <span class="graphic-badge graphic-badge--blue">BARRIER RESISTANCE: 10⁸ Ω·cm²</span>
+            </div>
+
+            <div class="coating-cross-section">
+              <div class="coating-layer coating-layer--surface">
+                <span class="layer-title">Layer 01 · Superhydrophobic Nanotexture (SiO₂ / TiO₂)</span>
+                <span class="layer-spec">Contact Angle: 162° · Micro-roughness</span>
+              </div>
+              <div class="coating-layer coating-layer--matrix">
+                <span class="layer-title">Layer 02 · Smart Nanocapsule Self-Healing Matrix</span>
+                <span class="layer-spec">Triggered Inhibitor Release &lt; 120s</span>
+              </div>
+              <div class="coating-layer coating-layer--primer">
+                <span class="layer-title">Layer 03 · Epoxy-Graphene Nanocomposite Primer</span>
+                <span class="layer-spec">Tortuous Oxygen/Chloride Diffusion Path</span>
+              </div>
+            </div>
+
+            <div class="coating-metrics">
+              <span>SALT SPRAY RESISTANCE: 3200+ HRS</span>
+              <span>·</span>
+              <span>SELF-HEALING EFFICIENCY: 94%</span>
+              <span>·</span>
+              <span>DIFFUSION TORTUOSITY: 4.8x</span>
+            </div>
+          </div>
+
+          <!-- Action buttons -->
+          <div class="project-scene__actions reveal" data-delay="5">
+            <button type="button" class="btn btn--secondary btn-inspect" data-project-id="4">
+              <span class="btn__text">Inspect Telemetry &amp; Specs</span>
+              <span class="btn__icon" aria-hidden="true">⚡</span>
+            </button>
+            <a href="https://github.com/kompisamarth" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+              <span class="btn__text">Source Archive</span>
+              <span class="btn__icon" aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ───────────────────────────────────────────
+         PROJECT 05: S-Shape Air Intake Optimization
+         ─────────────────────────────────────────── -->
+    <article class="project-scene" id="project-5" data-project-index="5" data-domain="engineering" aria-label="Project: S-Shape Air Intake Optimization for a Twin-Compressor Jet Engine">
+      <div class="project-scene__inner">
+
+        <!-- Meta column -->
+        <div class="project-scene__meta">
+          <div class="project-scene__number reveal" aria-hidden="true">
+            <span class="big-number">05</span>
+          </div>
+          <div class="project-scene__field-label reveal" data-delay="1">
+            <span class="label label--mono label--spice">FIELD SYSTEM 05</span>
+          </div>
+          <div class="project-scene__category reveal" data-delay="2">
+            <span class="label label--mono">Aerospace Engineering / CFD</span>
+          </div>
+        </div>
+
+        <!-- Content column -->
+        <div class="project-scene__content">
+          <h3 class="project-scene__title reveal" data-delay="1">
+            S-Shape Air Intake Optimization<br>for a Twin-Compressor Jet Engine
+          </h3>
+
+          <p class="project-scene__description reveal" data-delay="2">
+            CFD aerodynamic study optimizing an S-shaped intake duct for twin-compressor engines, mitigating boundary-layer separation and swirl distortion.
+          </p>
+
+          <!-- Stack tags -->
+          <div class="project-scene__stack reveal" data-delay="3">
+            <span class="label label--mono label--muted">TECHNOLOGIES</span>
+            <div class="stack-tags">
+              <span class="skill-tag skill-tag--sm">Aerospace Engineering</span>
+              <span class="skill-tag skill-tag--sm">CFD</span>
+            </div>
+          </div>
+
+          <!-- Visual Graphic: Aerodynamic S-Duct Streamlines -->
+          <div class="project-graphic reveal" data-delay="4" role="img" aria-label="CFD Aerodynamic Streamlines across S-Duct">
+            <div class="graphic-header">
+              <span>AERODYNAMIC S-DUCT VELOCITY FIELD</span>
+              <span class="graphic-badge">PRESSURE RECOVERY: 0.982</span>
+            </div>
+
+            <div class="cfd-intake-canvas" aria-hidden="true">
+              <svg viewBox="0 0 600 120" class="sduct-svg" preserveAspectRatio="none">
+                <!-- Duct contour walls -->
+                <path d="M 20,20 C 150,20 200,75 350,75 C 450,75 520,30 580,30" fill="none" stroke="rgba(213,185,141,0.4)" stroke-width="2"/>
+                <path d="M 20,100 C 150,100 200,105 350,105 C 450,105 520,90 580,90" fill="none" stroke="rgba(213,185,141,0.4)" stroke-width="2"/>
+                
+                <!-- Animated streamlines -->
+                <path class="streamline-animated" d="M 20,40 C 150,40 200,82 350,82 C 450,82 520,45 580,45" fill="none" stroke="var(--spice-orange)" stroke-width="1.5" opacity="0.8"/>
+                <path class="streamline-animated" d="M 20,60 C 150,60 200,90 350,90 C 450,90 520,60 580,60" fill="none" stroke="var(--dune-sand)" stroke-width="1.5" opacity="0.9"/>
+                <path class="streamline-animated" d="M 20,80 C 150,80 200,98 350,98 C 450,98 520,75 580,75" fill="none" stroke="var(--accent-blue)" stroke-width="1.5" opacity="0.7"/>
+
+                <!-- Twin-compressor split divider -->
+                <polygon points="540,58 580,50 580,68" fill="rgba(213,185,141,0.3)" stroke="var(--dune-sand)" stroke-width="1"/>
+                <text x="35" y="16" fill="rgba(213,185,141,0.6)" font-family="JetBrains Mono" font-size="9">INLET MACH 0.78</text>
+                <text x="470" y="24" fill="rgba(213,185,141,0.6)" font-family="JetBrains Mono" font-size="9">TWIN COMPRESSOR SPLIT</text>
+              </svg>
+            </div>
+
+            <div class="cfd-data-strip">
+              <span>SWIRL DISTORTION: 0.041</span>
+              <span>·</span>
+              <span>BOUNDARY-LAYER BLEED: OPTIMIZED</span>
+              <span>·</span>
+              <span>DIFFUSION RATIO: 1.34</span>
+            </div>
+          </div>
+
+          <!-- Action buttons -->
+          <div class="project-scene__actions reveal" data-delay="5">
+            <button type="button" class="btn btn--secondary btn-inspect" data-project-id="5">
+              <span class="btn__text">Inspect Telemetry &amp; Specs</span>
+              <span class="btn__icon" aria-hidden="true">⚡</span>
+            </button>
+            <a href="https://github.com/kompisamarth" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+              <span class="btn__text">Source Archive</span>
+              <span class="btn__icon" aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ───────────────────────────────────────────
+         PROJECT 06: Hostel Mess Nutrition Survey
+         ─────────────────────────────────────────── -->
+    <article class="project-scene" id="project-6" data-project-index="6" data-domain="product" aria-label="Project: Hostel Mess Nutrition, Dining and Planning Survey">
+      <div class="project-scene__inner">
+
+        <!-- Meta column -->
+        <div class="project-scene__meta">
+          <div class="project-scene__number reveal" aria-hidden="true">
+            <span class="big-number">06</span>
+          </div>
+          <div class="project-scene__field-label reveal" data-delay="1">
+            <span class="label label--mono label--spice">FIELD SYSTEM 06</span>
+          </div>
+          <div class="project-scene__category reveal" data-delay="2">
+            <span class="label label--mono">Design Research / User-Centred Design</span>
+          </div>
+        </div>
+
+        <!-- Content column -->
+        <div class="project-scene__content">
+          <h3 class="project-scene__title reveal" data-delay="1">
+            Hostel Mess Nutrition, Dining<br>and Planning Survey
+          </h3>
+
+          <p class="project-scene__description reveal" data-delay="2">
+            Human-centred research analyzing dining patterns, nutrition balances, and waste dynamics across 420+ students to optimize mess planning.
+          </p>
+
+          <!-- Stack tags -->
+          <div class="project-scene__stack reveal" data-delay="3">
+            <span class="label label--mono label--muted">TECHNOLOGIES</span>
+            <div class="stack-tags">
+              <span class="skill-tag skill-tag--sm">Design Thinking</span>
+              <span class="skill-tag skill-tag--sm">Survey Research</span>
+              <span class="skill-tag skill-tag--sm">User-Centred Design</span>
+            </div>
+          </div>
+
+          <!-- Visual Graphic: Survey Timeline & Insight Cards -->
+          <div class="project-graphic reveal" data-delay="4" role="img" aria-label="Hostel Mess Planning Timeline & Research Insights">
+            <div class="graphic-header">
+              <span>DINING TIMELINE &amp; USER INSIGHT MAP</span>
+              <span class="graphic-badge graphic-badge--sand">N=420 RESPONDENTS</span>
+            </div>
+
+            <div class="mess-timeline">
+              <div class="meal-slot">
+                <span class="meal-time">07:30 - 09:00</span>
+                <span class="meal-name">BREAKFAST</span>
+                <span class="meal-metric">Nutrient Score: 84% · Peak 08:15</span>
+              </div>
+              <div class="meal-slot">
+                <span class="meal-time">12:15 - 14:00</span>
+                <span class="meal-name">LUNCH</span>
+                <span class="meal-metric">Carb/Protein 68:32 · Peak 13:00</span>
+              </div>
+              <div class="meal-slot">
+                <span class="meal-time">19:45 - 21:30</span>
+                <span class="meal-name">DINNER</span>
+                <span class="meal-metric">Waste Reduction: -38% Target</span>
+              </div>
+            </div>
+
+            <div class="mess-insights">
+              <span class="insight-tag">Predictive Headcount Formulation</span>
+              <span class="insight-tag">Menu Diversity Rotation (14-Day Cycle)</span>
+              <span class="insight-tag">Queue Throttling at Station B</span>
+            </div>
+          </div>
+
+          <!-- Action buttons -->
+          <div class="project-scene__actions reveal" data-delay="5">
+            <button type="button" class="btn btn--secondary btn-inspect" data-project-id="6">
+              <span class="btn__text">Inspect Telemetry &amp; Specs</span>
+              <span class="btn__icon" aria-hidden="true">⚡</span>
+            </button>
+            <a href="https://github.com/kompisamarth" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+              <span class="btn__text">Source Archive</span>
+              <span class="btn__icon" aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ───────────────────────────────────────────
+         PROJECT 07: AI-Based News Aggregator
+         ─────────────────────────────────────────── -->
+    <article class="project-scene" id="project-7" data-project-index="7" data-domain="ai" aria-label="Project: AI-Based News Aggregator with Fake News Detection and Political Bias Analysis">
+      <div class="project-scene__inner">
+
+        <!-- Meta column -->
+        <div class="project-scene__meta">
+          <div class="project-scene__number reveal" aria-hidden="true">
+            <span class="big-number">07</span>
+          </div>
+          <div class="project-scene__field-label reveal" data-delay="1">
+            <span class="label label--mono label--spice">FIELD SYSTEM 07</span>
+          </div>
+          <div class="project-scene__category reveal" data-delay="2">
+            <span class="label label--mono">NLP / Machine Learning / Web Development</span>
+          </div>
+        </div>
+
+        <!-- Content column -->
+        <div class="project-scene__content">
+          <h3 class="project-scene__title reveal" data-delay="1">
+            AI-Based News Aggregator with Fake News<br>Detection and Political Bias Analysis
+          </h3>
+
+          <p class="project-scene__description reveal" data-delay="2">
+            An intelligent news pipeline using NLP and sentiment classifiers to analyze media slant, cross-verify source reporting, and flag synthetic misinformation.
+          </p>
+
+          <!-- Stack tags -->
+          <div class="project-scene__stack reveal" data-delay="3">
+            <span class="label label--mono label--muted">TECHNOLOGIES</span>
+            <div class="stack-tags">
+              <span class="skill-tag skill-tag--sm">Python</span>
+              <span class="skill-tag skill-tag--sm">NLP</span>
+              <span class="skill-tag skill-tag--sm">Machine Learning</span>
+              <span class="skill-tag skill-tag--sm">Web Development</span>
+            </div>
+          </div>
+
+          <!-- Visual Graphic: Political Bias Spectrum & Credibility Gauge -->
+          <div class="project-graphic reveal" data-delay="4" role="img" aria-label="Political Bias Spectrum & Credibility Evaluation">
+            <div class="graphic-header">
+              <span>POLITICAL BIAS SPECTRUM &amp; VERIFICATION</span>
+              <span class="graphic-badge graphic-badge--blue">CREDIBILITY CONFIDENCE: 94.6%</span>
+            </div>
+
+            <div class="bias-spectrum-wrap">
+              <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-secondary);">
+                NLP BIAS CLASSIFICATION: CENTER-ALIGNED (+0.04 POLARITY)
+              </span>
+              <div class="bias-spectrum" aria-hidden="true">
+                <span>FAR LEFT</span>
+                <span>CENTER LEFT</span>
+                <span style="color: var(--parchment); font-weight: 600;">CENTER</span>
+                <span>CENTER RIGHT</span>
+                <span>FAR RIGHT</span>
+                <div class="bias-pin"></div>
+              </div>
+            </div>
+
+            <div class="news-metrics">
+              <span>SOURCE CROSS-VERIFICATION: 7 OUTLETS</span>
+              <span>·</span>
+              <span>CLICKBAIT ENTROPY: LOW (12%)</span>
+              <span>·</span>
+              <span>STYLOMETRIC INTEGRITY: 92%</span>
+            </div>
+          </div>
+
+          <!-- Action buttons -->
+          <div class="project-scene__actions reveal" data-delay="5">
+            <button type="button" class="btn btn--secondary btn-inspect" data-project-id="7">
+              <span class="btn__text">Inspect Telemetry &amp; Specs</span>
+              <span class="btn__icon" aria-hidden="true">⚡</span>
+            </button>
+            <a href="https://github.com/kompisamarth" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+              <span class="btn__text">Source Archive</span>
+              <span class="btn__icon" aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ───────────────────────────────────────────
+         PROJECT 08: Driver Drowsiness and Alcohol Detection
+         ─────────────────────────────────────────── -->
+    <article class="project-scene" id="project-8" data-project-index="8" data-domain="product" aria-label="Project: Driver Drowsiness and Alcohol Detection System">
+      <div class="project-scene__inner">
+
+        <!-- Meta column -->
+        <div class="project-scene__meta">
+          <div class="project-scene__number reveal" aria-hidden="true">
+            <span class="big-number">08</span>
+          </div>
+          <div class="project-scene__field-label reveal" data-delay="1">
+            <span class="label label--mono label--spice">FIELD SYSTEM 08</span>
+          </div>
+          <div class="project-scene__category reveal" data-delay="2">
+            <span class="label label--mono">Computer Vision / Embedded Systems</span>
+          </div>
+        </div>
+
+        <!-- Content column -->
+        <div class="project-scene__content">
+          <h3 class="project-scene__title reveal" data-delay="1">
+            Driver Drowsiness and Alcohol<br>Detection System
+          </h3>
+
+          <p class="project-scene__description reveal" data-delay="2">
+            Real-time driver vigilance monitor combining ocular mesh tracking (EAR / PERCLOS) and MQ-3 embedded sensors for proactive fatigue and alcohol detection.
+          </p>
+
+          <!-- Stack tags -->
+          <div class="project-scene__stack reveal" data-delay="3">
+            <span class="label label--mono label--muted">TECHNOLOGIES</span>
+            <div class="stack-tags">
+              <span class="skill-tag skill-tag--sm">Computer Vision</span>
+              <span class="skill-tag skill-tag--sm">Embedded Systems</span>
+            </div>
+          </div>
+
+          <!-- Visual Graphic: Real-time Telemetry HUD -->
+          <div class="project-graphic reveal" data-delay="4" role="img" aria-label="Driver Eye Aspect Ratio & Alcohol Telemetry HUD">
+            <div class="graphic-header">
+              <span>SAFETY TELEMETRY HUD &amp; OCULAR MESH</span>
+              <span class="graphic-badge">STATUS: DROWSINESS WARNING</span>
+            </div>
+
+            <div class="drowsiness-hud">
+              <div class="hud-panel">
+                <span class="hud-label">EYE ASPECT RATIO (EAR)</span>
+                <span class="hud-value hud-value--alert">0.17 &lt; 0.22 THRESHOLD</span>
+                <div class="hud-graph-bar"><div class="hud-fill"></div></div>
+                <span style="font-size: 0.65rem; color: var(--text-muted); margin-top: 0.2rem;">CRITICAL CLOSURE DURATION &gt; 2.4s</span>
+              </div>
+              <div class="hud-panel">
+                <span class="hud-label">ALCOHOL SENSOR (MQ-3)</span>
+                <span class="hud-value" style="color: var(--accent-blue);">0.00 mg/L [NEGATIVE]</span>
+                <div class="hud-graph-bar"><div class="hud-fill hud-fill--safe"></div></div>
+                <span style="font-size: 0.65rem; color: var(--text-muted); margin-top: 0.2rem;">LEGAL LIMIT COMPLIANT</span>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-secondary); border-top: 1px solid var(--border-subtle); padding-top: 0.6rem;">
+              <span>PERCLOS: 42% / 60s WINDOW</span>
+              <span>·</span>
+              <span>HEAD PITCH: -14° (NODDING)</span>
+              <span>·</span>
+              <span>BUZZER INTERLOCK: ARMED</span>
+            </div>
+          </div>
+
+          <!-- Action buttons -->
+          <div class="project-scene__actions reveal" data-delay="5">
+            <button type="button" class="btn btn--secondary btn-inspect" data-project-id="8">
+              <span class="btn__text">Inspect Telemetry &amp; Specs</span>
+              <span class="btn__icon" aria-hidden="true">⚡</span>
+            </button>
+            <a href="https://github.com/kompisamarth" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+              <span class="btn__text">Source Archive</span>
+              <span class="btn__icon" aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════
+       4. CONTACT — “Transmit”
+       ═══════════════════════════════════════════════════ -->
+  <section id="contact" class="section contact" aria-label="Contact information">
+    <div class="section__inner contact__inner">
+
+      <span class="label label--mono reveal">TRANSMIT</span>
+
+      <h2 class="contact__heading reveal" data-delay="1">
+        Let’s build something<br>that matters.
+      </h2>
+
+      <p class="contact__copy reveal" data-delay="2">
+        Open to collaborations, ambitious software problems, and conversations across systems, AI, engineering, and design.
+      </p>
+
+      <!-- Primary contact: email + copy button -->
+      <div class="contact__email-row reveal" data-delay="3">
+        <a href="mailto:kompisamarth.cs25@rvce.edu.in" class="contact__email-link" aria-label="Send email to Kompi Samarth">
+          kompisamarth.cs25@rvce.edu.in
+        </a>
+        <button type="button" class="btn-copy-email" id="copyEmailBtn" aria-label="Copy email address to clipboard" title="Copy frequency to clipboard">
+          <span class="copy-email-icon" aria-hidden="true">📋</span>
+          <span class="copy-email-text" id="copyEmailText">COPY FREQUENCY</span>
+        </button>
+      </div>
+
+      <!-- Phone -->
+      <div class="contact__phone reveal" data-delay="3">
+        <a href="tel:+917204243624" class="contact__phone-link" aria-label="Call Kompi Samarth">
+          +91 7204243624
+        </a>
+      </div>
+
+      <!-- Social links -->
+      <div class="contact__links reveal" data-delay="4">
+        <a href="https://github.com/kompisamarth" target="_blank" rel="noopener noreferrer" class="contact__social-link" aria-label="GitHub profile">
+          <span class="contact__social-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+          </span>
+          <span>GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/samarth-kompi-71b79b373/" target="_blank" rel="noopener noreferrer" class="contact__social-link" aria-label="LinkedIn profile">
+          <span class="contact__social-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </span>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <p class="footer__text">© 2026 Kompi Samarth · Built at the edge.</p>
+    </footer>
+  </section>
+
+  <!-- Tactical Toast Notification -->
+  <div class="tactical-toast" id="tacticalToast" role="status" aria-live="polite" aria-hidden="true">
+    <span class="toast-glyph" aria-hidden="true">✦</span>
+    <span class="toast-message" id="toastMessage">Signal transmitted.</span>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════
+       TECHNICAL TELEMETRY & SPEC DRAWER (MODAL)
+       ═══════════════════════════════════════════════════ -->
+  <aside class="tech-drawer-backdrop" id="techDrawerBackdrop" aria-hidden="true">
+    <div class="tech-drawer" id="techDrawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+      <div class="drawer-header">
+        <div class="drawer-header__left">
+          <span class="drawer-subsystem" id="drawerSubsystem">SYS-SPEC // 01</span>
+          <h3 class="drawer-title" id="drawerTitle">System Telemetry &amp; Architecture</h3>
+        </div>
+        <button type="button" class="drawer-close" id="drawerClose" aria-label="Close telemetry drawer">
+          <span aria-hidden="true">ESC / CLOSE ✕</span>
+        </button>
+      </div>
+
+      <div class="drawer-body">
+        <!-- Overview & Metrics Matrix -->
+        <div class="drawer-section">
+          <span class="label label--mono label--spice">BENCHMARK MATRIX &amp; SPECIFICATIONS</span>
+          <div class="drawer-metrics-grid" id="drawerMetrics">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <!-- Technical Description -->
+        <div class="drawer-section">
+          <span class="label label--mono label--muted">SYSTEM FORMULATION &amp; ARCHITECTURE</span>
+          <p class="drawer-desc" id="drawerDesc"></p>
+        </div>
+
+        <!-- Live Code / Telemetry Snippet -->
+        <div class="drawer-section">
+          <div class="drawer-code-header">
+            <span class="label label--mono label--spice" id="drawerCodeTitle">SOURCE TELEMETRY SNIPPET</span>
+            <button type="button" class="btn-copy-code" id="btnCopyCode" aria-label="Copy code snippet">
+              <span id="copyCodeLabel">COPY SNIPPET</span>
+            </button>
+          </div>
+          <pre class="drawer-code-block"><code id="drawerCode"></code></pre>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
